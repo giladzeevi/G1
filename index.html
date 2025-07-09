@@ -1,28 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>The End of the Internet</title>
+  <meta charset="UTF-8">
+  <title>CommX Connect</title>
+  <script src="https://commx1.my.connect.aws/connectwidget/static/amazon-connect-chat-interface-client.js"></script> <!-- Replace with actual chat JS SDK -->
   <style>
-    body {
-      background-color: pink;
-      color: darkblue;
-      font-family: Comic Sans MS, sans-serif;
-      text-align: center;
-      padding-top: 20%;
-    }
-    h1 {
-      font-size: 3em;
-      animation: spin 5s linear infinite;
-    }
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    #chat-container { height: 500px; width: 400px; border: 1px solid #ccc; }
   </style>
 </head>
 <body>
-  <h1>You have reached the end of the internet</h1>
-  <p>Please go back.</p>
-  <img src="https://media.giphy.com/media/3o6MbkJcEYPJRHcMNa/giphy.gif" alt="Crazy Cat" width="300">
+
+<h2>Contact Us</h2>
+<div id="chat-container"></div>
+
+<script type="text/javascript">
+  (function(w, d, x, id){
+    s=d.createElement('script');
+    s.src='https://commx1.my.connect.aws/connectwidget/static/amazon-connect-chat-interface-client.js';
+    s.async=1;
+    s.id=id;
+    d.getElementsByTagName('head')[0].appendChild(s);
+    w[x] =  w[x] || function() { (w[x].ac = w[x].ac || []).push(arguments) };
+  })(window, document, 'amazon_connect', 'e6499474-d60b-422c-8a2d-e0825fc425bc');
+  amazon_connect('styles', { iconType: 'CHAT_VOICE', openChat: { color: '#ffffff', backgroundColor: '#123456' }, closeChat: { color: '#ffffff', backgroundColor: '#123456'} });
+  amazon_connect('snippetId', 'QVFJREFIZ3JjM0V2VVBOckdYcW1jeFRyRHU0N1IwL0hXQXhoMlF6RE5FSm4wc01nUUFIZEtMNTl1SVM2NkhRTXFBakFnRHZqQUFBQWJqQnNCZ2txaGtpRzl3MEJCd2FnWHpCZEFnRUFNRmdHQ1NxR1NJYjNEUUVIQVRBZUJnbGdoa2dCWlFNRUFTNHdFUVFNR3VOTGVYQS9peDd1Z0pYTkFnRVFnQ3ZpZUVyWlFDY05TL2x5eXUrcTNWcDd5TnFZTTEvRUt3ZStWQmhBN2VzMitWWXd4TkFYVHNxY3BXVW06Omh4YXBvcWpXcDZZZ1c5b2dtVmR0eWFPdlY2UjFzaFNqL3czR3RGSlFWVGJCVWNYV0lXWWR0cGczZ2VDckhIRDB2MXpHZDNLbG5JZlROSGliR2d4VFZiaEJKYUVnZCs1Z0hzeWFEUkNPNVdNekRMYWV3cjlzV2EvTUtpRXJkSFZJQUNoSVNKSUwzYkhzUnUwaXM3cUJsTDZvRGEzRWp1QT0=');
+  amazon_connect('supportedMessagingContentTypes', [ 'text/plain', 'text/markdown', 'application/vnd.amazonaws.connect.message.interactive', 'application/vnd.amazonaws.connect.message.interactive.response' ]);
+</script>
+
+
 </body>
 </html>
